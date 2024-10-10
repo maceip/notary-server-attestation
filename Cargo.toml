@@ -1,0 +1,63 @@
+[package]
+name = "demodemo"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+base64 = "0.21" # or the latest version
+pem = "1.0"     # or the latest version
+
+x509-cert = "0.2.5"
+x509 = "*"
+p256 = "*"
+reqwest = { version = "0.12.8", features = ["json"] }
+bytes = "1.2"
+mc-sgx-core-sys-types = "0.4.2"
+mc-sgx-dcap-types = "0.11.0"
+mc-sgx-core-types = "0.4.2"
+notary-client = { git = "https://github.com/tlsnotary/tlsn", rev = "a7a8a8341095c34607d063c372d269cd46ce4b99" }
+tlsn-common = { git = "https://github.com/tlsnotary/tlsn", rev = "a7a8a8341095c34607d063c372d269cd46ce4b99" }
+tlsn-core = { git = "https://github.com/tlsnotary/tlsn", rev = "a7a8a8341095c34607d063c372d269cd46ce4b99" }
+tlsn-prover = { git = "https://github.com/tlsnotary/tlsn", rev = "a7a8a8341095c34607d063c372d269cd46ce4b99" }
+tlsn-utils = { git = "https://github.com/tlsnotary/tlsn-utils", rev = "e7b2db6" }
+tlsn-verifier = { git = "https://github.com/tlsnotary/tlsn", rev = "a7a8a8341095c34607d063c372d269cd46ce4b99" }
+tlsn-utils-aio = { git = "https://github.com/tlsnotary/tlsn-utils", rev = "e7b2db6" }
+tlsn-formats = { git = "https://github.com/tlsnotary/tlsn", rev = "a7a8a8341095c34607d063c372d269cd46ce4b99" }
+mpz-circuits = { git = "https://github.com/privacy-scaling-explorations/mpz", rev = "b8ae7ac" }
+mpz-common = { git = "https://github.com/privacy-scaling-explorations/mpz", rev = "b8ae7ac" }
+mpz-core = { git = "https://github.com/privacy-scaling-explorations/mpz", rev = "b8ae7ac" }
+mpz-garble = { git = "https://github.com/privacy-scaling-explorations/mpz", rev = "b8ae7ac" }
+mpz-garble-core = { git = "https://github.com/privacy-scaling-explorations/mpz", rev = "b8ae7ac" }
+mpz-ole = { git = "https://github.com/privacy-scaling-explorations/mpz", rev = "b8ae7ac" }
+mpz-ot = { git = "https://github.com/privacy-scaling-explorations/mpz", rev = "b8ae7ac" }
+mpz-share-conversion = { git = "https://github.com/privacy-scaling-explorations/mpz", rev = "b8ae7ac" }
+spansy = { git = "https://github.com/tlsnotary/tlsn-utils", rev = "e7b2db6" }
+
+bincode ="1.3"
+chrono ="0.4"
+dotenv = { version = "0.15.0" }
+elliptic-curve = { version = "0.13", features = ["pkcs8"] }
+futures ="0.3"
+http-body-util ="*"
+hex ="*"
+hyper = { version = "1.1", features = ["client", "http1"] }
+hyper-util = { version = "*", features = ["full"] }
+k256 = { version = "0.13.4", features = ["ecdsa", "arithmetic"] }
+regex ="*"
+serde = { version = "1.0", features = ["derive"] }
+serde_json ="*"
+tokio = { version = "1.38", features = [
+  "rt",
+  "rt-multi-thread",
+  "macros",
+  "net",
+  "io-std",
+  "fs",
+] }
+tokio-util ="0.7"
+tracing ="*"
+tracing-subscriber ="*"
+
+[[bin]]
+name = "demodemo"
+path = "src/main.rs"
